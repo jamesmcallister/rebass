@@ -4,9 +4,11 @@
   "description": "React UI component library & design system, built with styled-components and styled-system",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "babel src -d dist",
+    "build:js": "babel src -d dist",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
-    "test": "nyc ava"
+    "test": "tsc && nyc ava",
+    "lint": "prettier './src/**/*.js?(x)' --parser typescript --write",
+    "build:ts": "tsc"
   },
   "keywords": [
     "components",
@@ -31,6 +33,8 @@
     "system-components": "^2.0.2"
   },
   "devDependencies": {
+    "@types/react": "16.3.5",
+    "@types/react-dom": "16.0.4",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -40,9 +44,14 @@
     "babel-register": "^6.26.0",
     "codecov": "^3.0.0",
     "nyc": "^11.4.1",
+    "prettier": "1.11.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-test-renderer": "^16.2.0"
+    "react-test-renderer": "^16.2.0",
+    "tslint": "5.9.1",
+    "tslint-config-prettier": "1.10.0",
+    "tslint-react": "3.5.1",
+    "typescript": "2.8.1"
   },
   "repository": {
     "type": "git",

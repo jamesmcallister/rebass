@@ -2,12 +2,10 @@ import test from 'ava'
 import React from 'react'
 import { isCompositeComponent, isElement } from 'react-dom/test-utils'
 import { create as render } from 'react-test-renderer'
-import * as Rebass from '../src'
-import { Provider, theme } from '../src'
+import * as Rebass from '../dist'
+import { Provider, theme } from '../dist'
 
-import {
-  __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
-} from 'styled-components'
+import { __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS } from 'styled-components'
 
 const { StyleSheet } = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
 
@@ -22,14 +20,14 @@ test('exports an object', t => {
 Object.keys(Rebass)
   .filter(key => typeof Rebass[key] === 'function')
   .forEach(key => {
-  test(`exports a ${key} component`, t => {
-    const Comp = Rebass[key]
-    const json = render(<Comp />).toJSON()
-    t.snapshot(json)
-    t.is(typeof Comp, 'function')
-    t.true(isElement(<Comp />))
+    test(`exports a ${key} component`, t => {
+      const Comp = Rebass[key]
+      const json = render(<Comp />).toJSON()
+      t.snapshot(json)
+      t.is(typeof Comp, 'function')
+      t.true(isElement(<Comp />))
+    })
   })
-})
 
 test('Provider renders', t => {
   const json = render(<Provider />).toJSON()
@@ -37,17 +35,15 @@ test('Provider renders', t => {
 })
 
 test('Provider renders with custom theme', t => {
-  const json = render(<Provider
-    theme={{
-      fonts: [],
-      fontSizes: [
-        12, 16, 18, 24, 36, 48, 72
-      ],
-      space: [
-        0, 6, 12, 18, 24, 30, 36
-      ]
-    }}
-  />).toJSON()
+  const json = render(
+    <Provider
+      theme={{
+        fonts: [],
+        fontSizes: [12, 16, 18, 24, 36, 48, 72],
+        space: [0, 6, 12, 18, 24, 30, 36]
+      }}
+    />
+  ).toJSON()
   t.snapshot(json)
 })
 
@@ -68,7 +64,7 @@ test.skip('renders NavLink active', t => {
 })
 
 test('renders Text bold', t => {
-  const json = render(<Rebass.Text fontWeight='bold' />).toJSON()
+  const json = render(<Rebass.Text fontWeight="bold" />).toJSON()
   t.snapshot(json)
 })
 
@@ -98,12 +94,12 @@ test('renders Border border 2', t => {
 })
 
 test('renders Border none', t => {
-  const json = render(<Rebass.Border border='none' />).toJSON()
+  const json = render(<Rebass.Border border="none" />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Banner backgroundImage', t => {
-  const json = render(<Rebass.Banner src='hello.png' />).toJSON()
+  const json = render(<Rebass.Banner src="hello.png" />).toJSON()
   t.snapshot(json)
 })
 
@@ -185,42 +181,42 @@ test('renders Drawer open', t => {
 })
 
 test('renders Drawer position top', t => {
-  const json = render(<Rebass.Drawer position='top' />).toJSON()
+  const json = render(<Rebass.Drawer position="top" />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Drawer position right', t => {
-  const json = render(<Rebass.Drawer position='right' />).toJSON()
+  const json = render(<Rebass.Drawer position="right" />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Drawer position bottom', t => {
-  const json = render(<Rebass.Drawer position='bottom' />).toJSON()
+  const json = render(<Rebass.Drawer position="bottom" />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Drawer position left', t => {
-  const json = render(<Rebass.Drawer position='left' />).toJSON()
+  const json = render(<Rebass.Drawer position="left" />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Drawer open position top', t => {
-  const json = render(<Rebass.Drawer open position='top' />).toJSON()
+  const json = render(<Rebass.Drawer open position="top" />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Drawer open position right', t => {
-  const json = render(<Rebass.Drawer open position='right' />).toJSON()
+  const json = render(<Rebass.Drawer open position="right" />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Drawer open position bottom', t => {
-  const json = render(<Rebass.Drawer open position='bottom' />).toJSON()
+  const json = render(<Rebass.Drawer open position="bottom" />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Drawer open position left', t => {
-  const json = render(<Rebass.Drawer open position='left' />).toJSON()
+  const json = render(<Rebass.Drawer open position="left" />).toJSON()
   t.snapshot(json)
 })
 
@@ -245,12 +241,12 @@ test.skip('renders Star half', t => {
 })
 
 test('renders Arrow up', t => {
-  const json = render(<Rebass.Arrow direction='up' />).toJSON()
+  const json = render(<Rebass.Arrow direction="up" />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Embed ratio', t => {
-  const json = render(<Rebass.Embed ratio={1/2} />).toJSON()
+  const json = render(<Rebass.Embed ratio={1 / 2} />).toJSON()
   t.snapshot(json)
 })
 
@@ -260,6 +256,6 @@ test('renders Switch checked', t => {
 })
 
 test('renders BackgroundImage src', t => {
-  const json = render(<Rebass.BackgroundImage src='hello.png' />).toJSON()
+  const json = render(<Rebass.BackgroundImage src="hello.png" />).toJSON()
   t.snapshot(json)
 })

@@ -12,7 +12,9 @@ export const ButtonTransparent = styled(Button)([], props => ({
   },
   '&:active': {
     backgroundColor: 'transparent',
-    boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${themeGet('colors.darken.1')(props)}`
+    boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${themeGet('colors.darken.1')(
+      props
+    )}`
   }
 }))
 

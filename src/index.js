@@ -68,13 +68,7 @@ export { Dot } from './Dot'
 export { Arrow } from './Arrow'
 export { Donut } from './Donut'
 
-export {
-  Position,
-  Relative,
-  Absolute,
-  Fixed,
-  Sticky,
-} from './Position'
+export { Position, Relative, Absolute, Fixed, Sticky } from './Position'
 
 export { Modal } from './Modal'
 export { Drawer } from './Drawer'

@@ -6,7 +6,7 @@ export const ButtonOutline = styled(Button)([], props => ({
   boxShadow: `inset 0 0 0 2px`,
   '&:hover': {
     color: 'white',
-    backgroundColor: themeGet('colors.blue')(props),
+    backgroundColor: themeGet('colors.blue')(props)
   },
   '&:focus': {
     boxShadow: `inset 0 0 0 2px, 0 0 0 2px`
@@ -14,7 +14,9 @@ export const ButtonOutline = styled(Button)([], props => ({
   '&:active': {
     color: 'white',
     backgroundColor: themeGet('colors.blue')(props),
-    boxShadow: `inset 0 0 0 2px ${themeGet('colors.' + props.color)(props)}, inset 0 0 8px ${themeGet('colors.darken.1')(props)}`
+    boxShadow: `inset 0 0 0 2px ${themeGet('colors.' + props.color)(
+      props
+    )}, inset 0 0 8px ${themeGet('colors.darken.1')(props)}`
   }
 }))
 

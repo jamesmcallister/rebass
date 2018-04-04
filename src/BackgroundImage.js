@@ -8,18 +8,19 @@ const bgImage = style({
   getter: n => `url(${n})`
 })
 
-export const BackgroundImage = sys({
-  width: 1,
-  ratio: 3/4,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center'
-},
+export const BackgroundImage = sys(
+  {
+    width: 1,
+    ratio: 3 / 4,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  },
   bgImage,
   'ratio',
   'backgroundSize',
   'backgroundPosition',
   'space',
-  'color',
+  'color'
 )
 
 BackgroundImage.displayName = 'BackgroundImage'

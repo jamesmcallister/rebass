@@ -1,11 +1,12 @@
 import React from 'react'
 
-export const CSS = ({ css }) =>
+export const CSS = ({ css }) => (
   <style
     dangerouslySetInnerHTML={{
       __html: css
     }}
   />
+)
 
 CSS.defaultProps = {
   css: '*{box-sizing:border-box}body{margin:0}'

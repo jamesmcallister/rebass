@@ -1,13 +1,17 @@
 import sys from 'system-components'
 
-export const Panel = sys({
-  bg: 'white',
-  borderRadius: 2,
-  border: 1,
-  borderColor: 'gray'
-}, {
-  overflow: 'hidden'
-}, 'space')
+export const Panel = sys(
+  {
+    bg: 'white',
+    borderRadius: 2,
+    border: 1,
+    borderColor: 'gray'
+  },
+  {
+    overflow: 'hidden'
+  },
+  'space'
+)
 
 Panel.displayName = 'Panel'
 

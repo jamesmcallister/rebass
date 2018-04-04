@@ -1,9 +1,12 @@
 import sys from 'system-components'
 
-export const Link = sys({
-  is: 'a',
-  color: 'blue'
-}, 'space')
+export const Link = sys(
+  {
+    is: 'a',
+    color: 'blue'
+  },
+  'space'
+)
 
 Link.displayName = 'Link'
 
