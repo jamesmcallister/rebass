@@ -1,17 +1,19 @@
 import test from 'ava'
-import React from 'react'
+import * as React from 'react'
 import { isCompositeComponent, isElement } from 'react-dom/test-utils'
 import { create as render } from 'react-test-renderer'
-import * as Rebass from '../dist'
-import { Provider, theme } from '../dist'
+import * as Rebass from '../src'
+import { Provider, theme } from '../src'
 
-import { __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS } from 'styled-components'
+// THis import is broken, not sure what do here.
 
-const { StyleSheet } = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
+// import { __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS } from 'styled-components'
 
-test.afterEach(() => {
-  StyleSheet.reset()
-})
+// const { StyleSheet } = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
+
+// test.afterEach(() => {
+//   StyleSheet.reset()
+// })
 
 test('exports an object', t => {
   t.is(typeof Rebass, 'object')
@@ -58,7 +60,7 @@ test('theme is an object', t => {
   t.is(typeof theme.fonts, 'object')
 })
 
-test.skip('renders NavLink active', t => {
+test('renders NavLink active', t => {
   const json = render(<Rebass.NavLink active />).toJSON()
   t.snapshot(json)
 })
@@ -103,77 +105,75 @@ test('renders Banner backgroundImage', t => {
   t.snapshot(json)
 })
 
-test.skip('renders TabItem active', t => {
-  const json = render(<Rebass.TabItem active />).toJSON()
+// test.skip('renders TabItem active', t => {
+//   const json = render(<Rebass.TabItem active />).toJSON()
+//   t.snapshot(json)
+// })
+
+// test.skip('renders DotButton active', t => {
+//   const json = render(<Rebass.DotButton active />).toJSON()
+//   t.snapshot(json)
+// })
+
+test('renders Absolute top', t => {
+  const json = render(<Rebass.Absolute top={0} />).toJSON()
   t.snapshot(json)
 })
 
-test.skip('renders DotButton active', t => {
-  const json = render(<Rebass.DotButton active />).toJSON()
+test('renders Absolute right', t => {
+  const json = render(<Rebass.Absolute right={0} />).toJSON()
   t.snapshot(json)
 })
 
-/*
-  test('renders Absolute top', t => {
-    const json = render(<Rebass.Absolute top={0} />).toJSON()
-    t.snapshot(json)
-  })
+test('renders Absolute bottom', t => {
+  const json = render(<Rebass.Absolute bottom={0} />).toJSON()
+  t.snapshot(json)
+})
 
-  test('renders Absolute right', t => {
-    const json = render(<Rebass.Absolute right={0} />).toJSON()
-    t.snapshot(json)
-  })
+test('renders Absolute left', t => {
+  const json = render(<Rebass.Absolute left={0} />).toJSON()
+  t.snapshot(json)
+})
 
-  test('renders Absolute bottom', t => {
-    const json = render(<Rebass.Absolute bottom={0} />).toJSON()
-    t.snapshot(json)
-  })
+test('renders Fixed top', t => {
+  const json = render(<Rebass.Fixed top />).toJSON()
+  t.snapshot(json)
+})
 
-  test('renders Absolute left', t => {
-    const json = render(<Rebass.Absolute left={0} />).toJSON()
-    t.snapshot(json)
-  })
+test('renders Fixed right', t => {
+  const json = render(<Rebass.Fixed right />).toJSON()
+  t.snapshot(json)
+})
 
-  test('renders Fixed top', t => {
-    const json = render(<Rebass.Fixed top />).toJSON()
-    t.snapshot(json)
-  })
+test('renders Fixed bottom', t => {
+  const json = render(<Rebass.Fixed bottom />).toJSON()
+  t.snapshot(json)
+})
 
-  test('renders Fixed right', t => {
-    const json = render(<Rebass.Fixed right />).toJSON()
-    t.snapshot(json)
-  })
+test('renders Fixed left', t => {
+  const json = render(<Rebass.Fixed left />).toJSON()
+  t.snapshot(json)
+})
 
-  test('renders Fixed bottom', t => {
-    const json = render(<Rebass.Fixed bottom />).toJSON()
-    t.snapshot(json)
-  })
+// test('renders Sticky top', t => {
+//   const json = render(<Rebass.Sticky top />).toJSON()
+//   t.snapshot(json)
+// })
 
-  test('renders Fixed left', t => {
-    const json = render(<Rebass.Fixed left />).toJSON()
-    t.snapshot(json)
-  })
+// test('renders Sticky right', t => {
+//   const json = render(<Rebass.Sticky right />).toJSON()
+//   t.snapshot(json)
+// })
 
-  test('renders Sticky top', t => {
-    const json = render(<Rebass.Sticky top />).toJSON()
-    t.snapshot(json)
-  })
+// test('renders Sticky bottom', t => {
+//   const json = render(<Rebass.Sticky bottom />).toJSON()
+//   t.snapshot(json)
+// })
 
-  test('renders Sticky right', t => {
-    const json = render(<Rebass.Sticky right />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Sticky bottom', t => {
-    const json = render(<Rebass.Sticky bottom />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Sticky left', t => {
-    const json = render(<Rebass.Sticky left />).toJSON()
-    t.snapshot(json)
-  })
-*/
+// test('renders Sticky left', t => {
+//   const json = render(<Rebass.Sticky left />).toJSON()
+//   t.snapshot(json)
+// })
 
 test('renders Drawer open', t => {
   const json = render(<Rebass.Drawer open />).toJSON()
@@ -230,15 +230,15 @@ test('renders Carousel index', t => {
   t.snapshot(json)
 })
 
-test.skip('renders Star checked', t => {
-  const json = render(<Rebass.Star checked />).toJSON()
-  t.snapshot(json)
-})
+// test.skip('renders Star checked', t => {
+//   const json = render(<Rebass.Star checked />).toJSON()
+//   t.snapshot(json)
+// })
 
-test.skip('renders Star half', t => {
-  const json = render(<Rebass.Star half />).toJSON()
-  t.snapshot(json)
-})
+// test.skip('renders Star half', t => {
+//   const json = render(<Rebass.Star half />).toJSON()
+//   t.snapshot(json)
+// })
 
 test('renders Arrow up', t => {
   const json = render(<Rebass.Arrow direction="up" />).toJSON()

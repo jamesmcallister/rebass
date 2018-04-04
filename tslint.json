@@ -8,6 +8,7 @@
     "object-literal-sort-keys": false,
     "no-console": false,
     "no-empty": false,
-    "no-unused-variable": false
+    "no-unused-variable": false,
+    "jsx-boolean-value": false
   }
 }

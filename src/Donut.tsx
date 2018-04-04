@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import sys from 'system-components'
 
 const DonutBase = props => {
