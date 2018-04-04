@@ -1,17 +1,17 @@
 import sys from 'system-components'
 import * as React from 'react'
 
-interface IPosition {
-  space?: boolean
-  color?: boolean
-  zIndex?: boolean
-  top?: boolean
-  right?: boolean
-  bottom?: boolean
-  left?: boolean
+interface Position {
+  displayName?: string | 'Position'
+  space?: boolean | null
+  color?: boolean | null
+  zIndex?: boolean | null
+  top?: boolean | null
+  right?: boolean | null
+  bottom?: boolean | null
+  left?: boolean | null
 }
-
-export const Position = sys(
+export const Position: Position = sys(
   'space',
   'color',
   'zIndex',
@@ -20,10 +20,10 @@ export const Position = sys(
   'bottom',
   'left'
 )
-
-Position.displayName = 'Position'
-
-export const Relative = sys(
+interface RelativeTypes {
+  displayName?: string | 'relative'
+}
+export const Relative: React.SFC<RelativeTypes> = sys(
   {
     is: Position
   },
@@ -31,9 +31,16 @@ export const Relative = sys(
     position: 'relative'
   }
 )
-Relative.displayName = 'Relative'
 
-export const Absolute = sys(
+interface AbsoluteTypes {
+  displayName?: string | 'absolute'
+  top?: number | null
+  right?: number | null
+  bottom?: number | null
+  left?: number | null
+}
+
+export const Absolute: React.SFC<AbsoluteTypes> = sys(
   {
     is: Position
   },
@@ -41,13 +48,9 @@ export const Absolute = sys(
     position: 'absolute'
   }
 )
-Absolute.displayName = 'Absolute'
-
-// interface FixedTypes extends IPosition {
-//   position?: string | 'fixed'
-// }
 
 interface FixedTypes {
+  displayName?: string | 'fixed'
   top?: boolean | null
   right?: boolean | null
   bottom?: boolean | null
@@ -64,11 +67,11 @@ export const Fixed: React.SFC<FixedTypes> = sys(
 )
 
 interface StickyTypes {
-  displayName: 'Sticky'
-  top?: boolean
-  right?: boolean
-  bottom?: boolean
-  left?: boolean
+  displayName?: string | 'sticky'
+  top?: boolean | null
+  right?: boolean | null
+  bottom?: boolean | null
+  left?: boolean | null
 }
 
 export const Sticky: React.SFC<StickyTypes> = sys(

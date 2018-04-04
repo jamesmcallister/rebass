@@ -5,7 +5,7 @@ import { create as render } from 'react-test-renderer'
 import * as Rebass from '../src'
 import { Provider, theme } from '../src'
 
-// THis import is broken, not sure what do here.
+// This import is broken, not sure what do here.
 
 // import { __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS } from 'styled-components'
 
@@ -105,12 +105,12 @@ test('renders Banner backgroundImage', t => {
   t.snapshot(json)
 })
 
-// test.skip('renders TabItem active', t => {
+// test('renders TabItem active', t => {
 //   const json = render(<Rebass.TabItem active />).toJSON()
 //   t.snapshot(json)
 // })
 
-// test.skip('renders DotButton active', t => {
+// test('renders DotButton active', t => {
 //   const json = render(<Rebass.DotButton active />).toJSON()
 //   t.snapshot(json)
 // })
@@ -155,25 +155,25 @@ test('renders Fixed left', t => {
   t.snapshot(json)
 })
 
-// test('renders Sticky top', t => {
-//   const json = render(<Rebass.Sticky top />).toJSON()
-//   t.snapshot(json)
-// })
+test('renders Sticky top', t => {
+  const json = render(<Rebass.Sticky top />).toJSON()
+  t.snapshot(json)
+})
 
-// test('renders Sticky right', t => {
-//   const json = render(<Rebass.Sticky right />).toJSON()
-//   t.snapshot(json)
-// })
+test('renders Sticky right', t => {
+  const json = render(<Rebass.Sticky right />).toJSON()
+  t.snapshot(json)
+})
 
-// test('renders Sticky bottom', t => {
-//   const json = render(<Rebass.Sticky bottom />).toJSON()
-//   t.snapshot(json)
-// })
+test('renders Sticky bottom', t => {
+  const json = render(<Rebass.Sticky bottom />).toJSON()
+  t.snapshot(json)
+})
 
-// test('renders Sticky left', t => {
-//   const json = render(<Rebass.Sticky left />).toJSON()
-//   t.snapshot(json)
-// })
+test('renders Sticky left', t => {
+  const json = render(<Rebass.Sticky left />).toJSON()
+  t.snapshot(json)
+})
 
 test('renders Drawer open', t => {
   const json = render(<Rebass.Drawer open />).toJSON()
@@ -230,12 +230,12 @@ test('renders Carousel index', t => {
   t.snapshot(json)
 })
 
-// test.skip('renders Star checked', t => {
+// test('renders Star checked', t => {
 //   const json = render(<Rebass.Star checked />).toJSON()
 //   t.snapshot(json)
 // })
 
-// test.skip('renders Star half', t => {
+// test('renders Star half', t => {
 //   const json = render(<Rebass.Star half />).toJSON()
 //   t.snapshot(json)
 // })

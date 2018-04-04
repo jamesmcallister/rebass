@@ -1,6 +1,11 @@
+import * as React from 'react'
 import sys from 'system-components'
 
-export const Dot = sys(
+interface DotTypes {
+  displayName: 'Dot'
+}
+
+export const Dot: React.SFC<DotTypes> = sys(
   {
     is: 'button',
     m: 0,
@@ -28,7 +33,5 @@ export const Dot = sys(
   'space',
   'color'
 )
-
-Dot.displayName = 'Dot'
 
 export default Dot
